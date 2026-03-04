@@ -1,9 +1,36 @@
 .landing {
   height: 100dvh;
   width: 100vw;
+  overflow: hidden;
+  background: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  .container {
+    position: relative;
+    overflow: hidden;
+    filter: saturate(50%);
+    transition: filter 0.5s ease;
+
+    &:hover {
+      filter: saturate(100%);
+
+      canvas {
+        transform: scale(1);
+      }
+    }
+
+    canvas {
+      display: block;
+      transition: transform 1s;
+    }
+
+    img {
+      object-fit: cover;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
 
 }

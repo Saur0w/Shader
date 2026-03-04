@@ -1,13 +1,18 @@
 "use client";
 
+import WaveImage from "@/components/Landing/index";
 import styles from "./page.module.css";
-import dynamic from "next/dynamic";
-const Landing = dynamic(() => import("@/components/Landing"), { ssr: false });
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <Landing />
-    </div>
-  );
+    return (
+        <main className={styles.main}>
+            <WaveImage
+                src="/images/midsommar.jpg"
+                alt="Midsommar"
+                width={400}
+                height={600}
+            />
+            <h1 className={styles.heading}>Midsommar</h1>
+        </main>
+    );
 }
